@@ -5,10 +5,19 @@ import (
 	"math/rand"
 )
 
+func init() {
+	fmt.Println("This starts the init function")
+}
+
 func main() {
 	for i := 0; i < 10; i++ {
 
+		/*
+		 Wrong use of the select statement, but I just wanted to use and try the select statement :)
+		*/
+
 		x := rand.Intn(251)
+
 		ch1 := make(chan int)
 		ch2 := make(chan int)
 		ch3 := make(chan int)
@@ -16,42 +25,37 @@ func main() {
 		ch5 := make(chan int)
 
 		go func() {
-			if x != 0 {
-				return
+			if x == 0 {
+				ch1 <- x
 			}
-			ch1 <- x
 		}()
 
 		go func() {
-			if x > 100 && x == 0 {
-				return
+			if x < 100 && x != 0 {
+				ch2 <- x
 			}
-			ch2 <- x
 		}()
 
 		go func() {
-			if x < 100 && x > 200 {
-				return
+			if x > 99 && x < 200 {
+				ch3 <- x
 			}
-			ch3 <- x
 		}()
 
 		go func() {
-			if x < 200 && x == 250 {
-				return
+			if x > 199 && x != 250 {
+				ch4 <- x
 			}
-			ch4 <- x
 		}()
 		go func() {
-			if x != 250 {
-				return
+			if x == 250 {
+				ch5 <- x
 			}
-			ch5 <- x
 		}()
 
 		select {
 		case v1 := <-ch1:
-			fmt.Printf("your value is %v that means: x is 0 \n", v1)
+			fmt.Printf("your value is %v that means: x is the smallest possible number! \n", v1)
 		case v2 := <-ch2:
 			fmt.Printf("your value is %v that means: x is less than 100 \n", v2)
 		case v3 := <-ch3:
@@ -60,8 +64,6 @@ func main() {
 			fmt.Printf("your value is %v that means: x is greater than 200 and less then 250 \n", v4)
 		case v5 := <-ch5:
 			fmt.Printf("your value is %v that means: x is the maximum: 250! \n", v5)
-		default:
-			fmt.Printf("your value is %v. That was not expected! \n", x)
 		}
 	}
 }
