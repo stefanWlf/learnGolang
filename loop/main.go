@@ -25,4 +25,12 @@ func main() {
 		fmt.Printf("Iteration: %v \n", y)
 		y++
 	}
+
+	for {
+		if y > 15 {
+			break
+		}
+		fmt.Println(y)
+		y++
+	}
 }
