@@ -33,8 +33,7 @@ func main() {
 	test := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 
 	test = append(test[:4], test[5:]...)
+	//works like this: You append the slice with a cap to it. The index of the slice at the right is exclusive, so it WILL NOT get saved in the variable and will therefore be deleted.
 
 	fmt.Println(test) // expected outout: [0 1 2 3 5 6 7 8 9]
-
-	//works like this: You append the slice with a certain cap to it, this cap is exclusive and WILL NOT get moved over, then just add the other wanted values as an argument
 }
