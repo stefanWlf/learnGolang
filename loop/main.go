@@ -27,10 +27,17 @@ func main() {
 	}
 
 	for {
-		if y > 15 {
+		if y == 0 {
 			break
 		}
+
 		fmt.Println(y)
-		y++
+		y--
+	}
+
+	xi := []int{42, 43, 44, 45, 46, 47}
+
+	for i, v := range xi {
+		fmt.Println(i, v)
 	}
 }
