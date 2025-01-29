@@ -1,4 +1,4 @@
-module github.com/stefanWlf/learnGolang/tree/main
+module github.com/stefanWlf/learnGolang
 
 go 1.23.5
 
