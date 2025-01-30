@@ -23,4 +23,19 @@ func main() {
 		fmt.Println("There is no one with that name. Her is the zero value", test)
 	}
 
+	// Example for the use of commaOk with channels
+	c := make(chan int)
+	
+	go func() {
+		c <- 42
+	}()
+	
+	v, ok := <-c
+	fmt.Println(v, ok)
+
+	close(c)
+
+	v, ok = <-c
+	fmt.Println(v, ok)
+
 }
