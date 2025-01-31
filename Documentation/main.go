@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(Docu.Years(10))
+	fmt.Println(docu.Years(10))
 }
