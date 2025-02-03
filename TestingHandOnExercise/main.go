@@ -3,9 +3,10 @@ package main
 import (
 	"fmt"
 
+	word "github.com/stefanWlf/learnGolang/TestingHandOnExercise/CountWords"
 	quote "github.com/stefanWlf/learnGolang/TestingHandOnExercise/CountWords/Quote"
-	word "github.com/stefanWlf/learnGolang/TestingHandOnExercise/CountWords/Words"
 	dog "github.com/stefanWlf/learnGolang/TestingHandOnExercise/Dog"
+	mymath "github.com/stefanWlf/learnGolang/TestingHandOnExercise/myMath"
 )
 
 type canine struct {
