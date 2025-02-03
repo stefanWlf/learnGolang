@@ -1,9 +1,9 @@
 package main
 
-func Subtract(xi ...int) int {
-	x := 0
+func Multiply(xi ...int) int {
+	x := 1
 	for _, v := range xi {
-		x += v
+		x *= v
 	}
 	return x
 }
