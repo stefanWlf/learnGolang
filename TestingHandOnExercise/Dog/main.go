@@ -3,10 +3,10 @@ package dog
 
 // Years converts human years to dog years.
 func Years(n int) int {
-	return n*7
+	return n * 7
 }
 
-// YearsTwo converts human years to dog years.
+// YearsTwo converts human years to dog years. SLOW AF
 func YearsTwo(n int) int {
 	count := 0
 	for i := 0; i < n; i++ {
